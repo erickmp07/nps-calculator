@@ -20,12 +20,6 @@ class UserController {
             });
         }
 
-        if (!(await schema.isValid(request.body))) {
-            return response.status(400).json({
-                error: "Validation failed!"
-            });
-        }
-
         const userRepository = getCustomRepository(UserRepository);
 
         const userAlreadyExists = await userRepository.findOne({
