@@ -30,7 +30,7 @@ class NpsController {
 
         const totalAnswers = surveyUsers.length;
 
-        const calculation = (promoters - detractors) / totalAnswers;
+        const calculation = ((promoters - detractors) / totalAnswers) * 100;
 
         return response.json({
             detractors,
