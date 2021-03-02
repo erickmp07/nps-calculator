@@ -25,6 +25,7 @@ This project was developed with the following technologies:
 - [TypeScript](https://www.typescriptlang.org)
 - [Node.js](https://nodejs.org)
 - [Yarn](https://yarnpkg.com/)
+- [Docker](https://www.docker.com/)
 - [Nodemailer](https://nodemailer.com)
 - [Ethereal-Email](https://ethereal.email)
 - [TypeORM](https://typeorm.io/#/)
@@ -43,7 +44,9 @@ The NPS-calculator is an application that calculates a company's NPS (Net Promot
 
 ## How to run
 
-Pre-requisites:
+### Locally
+
+Prerequisites:
 
 Download and install [Node.js](https://nodejs.org/en/download/) and [Yarn](https://classic.yarnpkg.com/en/docs/install/)
 
@@ -72,6 +75,30 @@ yarn test
 <br>
 
 The application can be accessed at [`localhost:3333`](http://localhost:3333).
+
+<br>
+
+### Docker container
+
+Prerequisites:
+
+Download and install [Docker](https://www.docker.com/products/docker-desktop)
+
+<br>
+
+- Clone the repository
+- Build the image with the command:
+```
+docker build -t <username>/<app-name> .
+```
+- Run the image with the command:
+```
+docker run -p 49160:3333 -d <username>/<app-name>
+```
+
+<br>
+
+The application can be accessed at [`localhost:49160`](http://localhost:49160) .
 
 ## License
 
