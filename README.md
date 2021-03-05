@@ -53,28 +53,65 @@ Download and install [Node.js](https://nodejs.org/en/download/) and [Yarn](https
 <br>
 
 - Clone the repository
-- Install the dependencies with [`yarn` command](https://classic.yarnpkg.com/en/docs/usage):
+```bash
+git clone https://github.com/erickmp07/NPS-calculator.git
 ```
+- Install the dependencies with [`yarn` command](https://classic.yarnpkg.com/en/docs/usage):
+```bash
 yarn
 ```
 
 <br>
 
 To start the server:
-```
+```bash
 yarn dev
 ```
 
 <br>
 
 To run the tests:
-```
+```bash
 yarn test
 ```
 
 <br>
 
-The application can be accessed at [`localhost:3333`](http://localhost:3333).
+The application can be accessed at [`localhost:3333`](http://localhost:3333) .
+
+The available routes are:
+
+```bash
+# POST (JSON) - Create User
+http://localhost:3333/users
+body: {
+    "name": "username",
+    "email": "email@domain.com"
+}
+
+# POST (JSON) - Create Survey
+http://localhost:3333/surveys
+body: {
+    "title": "title",
+    "description": "description"
+}
+
+# GET - Show Surveys
+http://localhost:3333/surveys
+
+# POST (JSON) - Send Mail
+http://localhost:3333/sendMail
+body: {
+    "email": "user_email",
+    "survey_id": "survey_id"
+}
+
+# GET - Answer Survey
+http://localhost:3333/answers/:value
+
+# GET - Calculate NPS
+http://localhost:3333/nps/:survey_id
+```
 
 <br>
 
@@ -87,18 +124,55 @@ Download and install [Docker](https://www.docker.com/products/docker-desktop)
 <br>
 
 - Clone the repository
-- Build the image with the command:
+```bash
+git clone https://github.com/erickmp07/NPS-calculator.git
 ```
+- Build the image with the command:
+```bash
 docker build -t <username>/<app-name> .
 ```
 - Run the image with the command:
-```
+```bash
 docker run -p 49160:3333 -d <username>/<app-name>
 ```
 
 <br>
 
 The application can be accessed at [`localhost:49160`](http://localhost:49160) .
+
+The available routes are:
+
+```bash
+# POST (JSON) - Create User
+http://localhost:49160/users
+body: {
+    "name": "username",
+    "email": "email@domain.com"
+}
+
+# POST (JSON) - Create Survey
+http://localhost:49160/surveys
+body: {
+    "title": "title",
+    "description": "description"
+}
+
+# GET - Show Surveys
+http://localhost:49160/surveys
+
+# POST (JSON) - Send Mail
+http://localhost:49160/sendMail
+body: {
+    "email": "user_email",
+    "survey_id": "survey_id"
+}
+
+# GET - Answer Survey
+http://localhost:49160/answers/:value
+
+# GET - Calculate NPS
+http://localhost:49160/nps/:survey_id
+```
 
 ## License
 
