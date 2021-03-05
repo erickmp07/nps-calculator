@@ -53,25 +53,25 @@ Download and install [Node.js](https://nodejs.org/en/download/) and [Yarn](https
 <br>
 
 - Clone the repository
-```
+```bash
 git clone https://github.com/erickmp07/NPS-calculator.git
 ```
 - Install the dependencies with [`yarn` command](https://classic.yarnpkg.com/en/docs/usage):
-```
+```bash
 yarn
 ```
 
 <br>
 
 To start the server:
-```
+```bash
 yarn dev
 ```
 
 <br>
 
 To run the tests:
-```
+```bash
 yarn test
 ```
 
@@ -81,7 +81,7 @@ The application can be accessed at [`localhost:3333`](http://localhost:3333) .
 
 The available routes are:
 
-```
+```bash
 # POST (JSON) - Create User
 http://localhost:3333/users
 body: {
@@ -124,12 +124,15 @@ Download and install [Docker](https://www.docker.com/products/docker-desktop)
 <br>
 
 - Clone the repository
-- Build the image with the command:
+```bash
+git clone https://github.com/erickmp07/NPS-calculator.git
 ```
+- Build the image with the command:
+```bash
 docker build -t <username>/<app-name> .
 ```
 - Run the image with the command:
-```
+```bash
 docker run -p 49160:3333 -d <username>/<app-name>
 ```
 
@@ -139,7 +142,7 @@ The application can be accessed at [`localhost:49160`](http://localhost:49160) .
 
 The available routes are:
 
-```
+```bash
 # POST (JSON) - Create User
 http://localhost:49160/users
 body: {
