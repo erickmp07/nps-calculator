@@ -176,4 +176,4 @@ http://localhost:49160/nps/:survey_id
 
 ## License
 
-Licensed under [MIT](LICENSE.md) license.
+Licensed under [MIT](LICENSE) license.
