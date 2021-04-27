@@ -2,7 +2,7 @@
   "name": "nps-calculator",
   "version": "1.0.0",
   "main": "index.js",
-  "description": "API developed in Node.js to calculate a company NPS (Net Promoter Score).",
+  "description": "A Node.js API to calculate a company NPS (Net Promoter Score).",
   "repository": "https://github.com/erickmp07/NPS-calculator.git",
   "author": "Erick Macedo Pinto <erimacedo_92@hotmail.com>",
   "license": "MIT",
