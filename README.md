@@ -1,22 +1,73 @@
-<h1 align="center">NPS-calculator</h1>
+# nps-calculator
 
-<p align="center">
-    <a href="#technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-    <a href="#project">Project</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-    <a href="#diagram">Diagram</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-    <a href="#how-to-run">How to run</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-    <a href="#license">License</a>
-</p>
+A [Node.js](https://nodejs.org) API to calculate a company NPS (Net Promoter Score).
 
-<p align="center">
-    <img alt="License" src="https://img.shields.io/github/license/erickmp07/NPS-calculator">
-</p>
+The nps-calculator is an API where you can register user, survey, send email to users answer the surveys and then the API calculates the NPS.
 
-<br>
+## Table of Contents
 
-<p align="center">
-    <img alt="NPS-calculator" src="public/nps-calculator.png">
-</p>
+- [Install](#install)
+- [Usage](#usage)
+- [Technologies](#technologies)
+- [API](#api)
+- [Contributing](#contributing)
+- [License](#license)
+
+## Install
+
+### Locally
+
+Prerequisites:
+
+Download and install [Node.js](https://nodejs.org/en/download/) and [Yarn](https://classic.yarnpkg.com/en/docs/install/).
+
+- First, clone the repository:
+```bash
+git clone https://github.com/erickmp07/nps-calculator.git
+```
+
+- Install its dependencies with [`yarn`command](https://classic.yarnpkg.com/en/docs/usage):
+```bash
+cd nps-calculator
+yarn
+```
+
+### Docker container
+
+Prerequisites:
+
+Download and install [Docker](https://www.docker.com/products/docker-desktop).
+
+- First, pull the image with the command:
+```bash
+docker pull erickmp07/nps-calculator:latest
+```
+
+## Usage
+
+### Locally
+
+Start the server:
+```bash
+yarn dev
+```
+
+Note: To run the tests:
+```bash
+yarn test
+```
+
+The application can be accessed at [`localhost:3333`](http://localhost:3333).
+
+### Docker container
+
+Run the image with the command:
+```bash
+docker run -p 49160:3333 -d erickmp07/nps-calculator
+```
+
+The application can be accessed at [`localhost:49160`](http://localhost:49160).
+
 
 ## Technologies
 
@@ -34,145 +85,47 @@ This project was developed with the following technologies:
 - [Jest](https://jestjs.io/)
 - [SQLite3](https://sqlite.org)
 
-## Project
-
-The NPS-calculator is an application that calculates a company's NPS (Net Promoter Score). We register user, survey, send email to users answer the surveys and then calculate the NPS.
-
-## Diagram
-
-<img alt="Application Diagram" src="public/diagram.png">
-
-## How to run
-
-### Locally
-
-Prerequisites:
-
-Download and install [Node.js](https://nodejs.org/en/download/) and [Yarn](https://classic.yarnpkg.com/en/docs/install/)
-
-<br>
-
-- Clone the repository
-```bash
-git clone https://github.com/erickmp07/NPS-calculator.git
-```
-- Install the dependencies with [`yarn` command](https://classic.yarnpkg.com/en/docs/usage):
-```bash
-yarn
-```
-
-<br>
-
-To start the server:
-```bash
-yarn dev
-```
-
-<br>
-
-To run the tests:
-```bash
-yarn test
-```
-
-<br>
-
-The application can be accessed at [`localhost:3333`](http://localhost:3333) .
+## API
 
 The available routes are:
 
 ```bash
 # POST (JSON) - Create User
-http://localhost:3333/users
+http://localhost:{port}/users
 body: {
     "name": "username",
     "email": "email@domain.com"
 }
 
 # POST (JSON) - Create Survey
-http://localhost:3333/surveys
+http://localhost:{port}/surveys
 body: {
     "title": "title",
     "description": "description"
 }
 
 # GET - Show Surveys
-http://localhost:3333/surveys
+http://localhost:{port}/surveys
 
 # POST (JSON) - Send Mail
-http://localhost:3333/sendMail
+http://localhost:{port}/sendMail
 body: {
     "email": "user_email",
     "survey_id": "survey_id"
 }
 
 # GET - Answer Survey
-http://localhost:3333/answers/:value
+http://localhost:{port}/answers/:value
 
 # GET - Calculate NPS
-http://localhost:3333/nps/:survey_id
+http://localhost:{port}/nps/:survey_id
 ```
 
-<br>
+## Contributing
 
-### Docker container
+PRs and stars are always welcome.
 
-Prerequisites:
-
-Download and install [Docker](https://www.docker.com/products/docker-desktop)
-
-<br>
-
-- Clone the repository
-```bash
-git clone https://github.com/erickmp07/NPS-calculator.git
-```
-- Build the image with the command:
-```bash
-docker build -t <username>/<app-name> .
-```
-- Run the image with the command:
-```bash
-docker run -p 49160:3333 -d <username>/<app-name>
-```
-
-<br>
-
-The application can be accessed at [`localhost:49160`](http://localhost:49160) .
-
-The available routes are:
-
-```bash
-# POST (JSON) - Create User
-http://localhost:49160/users
-body: {
-    "name": "username",
-    "email": "email@domain.com"
-}
-
-# POST (JSON) - Create Survey
-http://localhost:49160/surveys
-body: {
-    "title": "title",
-    "description": "description"
-}
-
-# GET - Show Surveys
-http://localhost:49160/surveys
-
-# POST (JSON) - Send Mail
-http://localhost:49160/sendMail
-body: {
-    "email": "user_email",
-    "survey_id": "survey_id"
-}
-
-# GET - Answer Survey
-http://localhost:49160/answers/:value
-
-# GET - Calculate NPS
-http://localhost:49160/nps/:survey_id
-```
+To ask a question, please [contact me](mailto:erimacedo_92@hotmail.com).
 
 ## License
 
